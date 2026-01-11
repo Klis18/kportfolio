@@ -1,1 +1,24 @@
-<p>about works!</p>
+<div class="px-8 md:px-12 lg:px-12 xl:px-12 py-4 md:py-8 lg:py-8 xl:py-8">
+    <div class="grid grid-cols-2 rounded-3xl ">
+        <div class="px-4 lg:px-8 xl:px-8 flex items-center col-span-2 lg:col-span-1 xl:col-span-1">
+            <div>
+                <h1 class="text-5xl">Sobre mi</h1>
+                <hr class="border-6 primary-border w-full lg:w-2xl xl:w-2xl mb-4">
+                <p>
+                    {{aboutText()}}
+                </p>
+                <div class="my-5">
+                    <p class="pb-2"><b>Herramientas: </b></p>
+                    <div class="flex flex-wrap gap-2">
+                    @for(tag of tags(); track $index){
+                            <span class="px-2 py-1 rounded-sm primary-bg">{{tag}}</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center lg:justify-end xl:justify-end h-fit p-2 lg:p-6 xl:p-6 col-span-2 lg:col-span-1 xl:col-span-1">
+                <img src="/images/kenianieves2.jpg" alt="mi foto" class="h-112 p-4 border-8 primary-border rounded-xl">
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { Home as HomeService } from '../../services/home';
 
 @Component({
@@ -10,7 +10,10 @@ import { Home as HomeService } from '../../services/home';
 export class Home {
 
   homeService = inject(HomeService);
-
-  toolsList: string[] = this.homeService.getToolsList(); 
+  toolsList = computed(this.homeService.getToolsList());
+  //toolsList: string[] = this.homeService.getToolsList(); 
+  name = signal('Kenia Nieves');
+  profession = signal('Analista QA & Desarrolladora Front-End');
+  initialMessage = signal('Aseguro calidad del producto mientras construyo interfaces funcionales y escalables.');
 
 }

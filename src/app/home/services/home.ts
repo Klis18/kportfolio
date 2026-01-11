@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal, WritableSignal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Home {
 
-  baseImgs: string = '/images/tools/';
-  tools:string[] = [
+    baseImgs: string = '/images/tools/';
+
+    tools = signal<string[]>([
     'angular',
     'apachejmeter',
     'cplusplus',
@@ -21,7 +22,7 @@ export class Home {
     'selenium',
     'trello',
     'typescript'
-  ];
+  ]);
 
 
 
@@ -29,13 +30,11 @@ export class Home {
     return this.baseImgs+imageText+'.svg';
   }
 
-  getToolsList(): string[]{
-    let tList: string[] = [];
-    this.tools.forEach((tool) => 
-    {
-      const toolImg = this.convertToImageRoute(tool);
-      tList.push(toolImg);
-    });
+  getToolsList(): WritableSignal<string[]>{
+    let tList = signal<string[]>([]);
+    this.tools().map((tool) => {
+      tList.update(tools => [...tools, this.convertToImageRoute(tool)])
+    })
     return tList;
   }
   

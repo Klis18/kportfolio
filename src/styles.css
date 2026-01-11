@@ -8,11 +8,28 @@
     border-color: #e0707d;
 }
 
+.primary-border{
+    border-color: #e0707d;
+}
+
+.primary-bg{
+  background-color: rgba(224, 112, 125, 0.2);
+}
+
+
 .primary-button{
     color: white;
     background-color: #e0707d;
     border-radius: var(--radius-3xl);
-    padding: 7px 0px 7px 0px;
+    padding: 7px 15px 7px 15px;
+}
+
+.primary-button:hover:active{
+    background-color: white;
+    color: #e0707d;
+    border-color: #e0707d;
+    border-radius: var(--radius-3xl);
+    padding: 7px 15px 7px 15px;
 }
 
 .primary-transparent{
@@ -45,7 +62,7 @@
   font-style: normal;
 }
 
-.poppins-light, a, button {
+.poppins-light, a, p, button {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-style: normal;
