@@ -1,11 +1,19 @@
 <div class="px-8 md:px-12 lg:px-12 xl:px-12 py-4 md:py-8 lg:py-8 xl:py-8">
     <h1 class="text-5xl">Mis Proyectos</h1>
     <div class="flex items-center my-12 gap-2">
-        <button class="primary-button border-2" (click)="ViewProjectByRole('qa')">Proyectos QA</button>
-        <button class="primary-button border-2" (click)="ViewProjectByRole('dev')">Proyectos Desarrollo</button>
+        <button [class.primary-active]="projectsRole() == 'qa'"
+                class="primary-button border-2" 
+                (click)="ViewProjectByRole('qa')">
+            Proyectos QA
+        </button>
+        <button [class.primary-active]="projectsRole() == 'dev'" 
+                class="primary-button border-2" 
+                (click)="ViewProjectByRole('dev')">
+            Proyectos Desarrollo
+        </button>
     </div>
 
-        @switch (projectsRole) {
+        @switch (projectsRole()) {
             @case('qa'){
                 <project-section [projectsList]="qaProjects()"></project-section>
             }

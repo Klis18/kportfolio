@@ -24,7 +24,15 @@
     padding: 7px 15px 7px 15px;
 }
 
-.primary-button:hover:active{
+.primary-button:hover{
+    background-color: white;
+    color: #e0707d;
+    border-color: #e0707d;
+    border-radius: var(--radius-3xl);
+    padding: 7px 15px 7px 15px;
+}
+
+.primary-active{
     background-color: white;
     color: #e0707d;
     border-color: #e0707d;

@@ -1,11 +1,11 @@
-<div class="grid grid-cols-2 gap-x-12 gap-y-20 rounded-3xl my-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-12 rounded-3xl my-12">
     @if(projectsList().length > 0){
         @for(project of projectsList(); track project.id){
             <project-card [project]="project"></project-card>
         }
     }
     @else{
-        <div class="col-span-2 p-8 text-center">
+        <div class="col-span-1 lg:col-span-2 xl:col-span-2 p-8 text-center">
             <p class="text-lg">No hay Proyectos</p>
         </div>
     }

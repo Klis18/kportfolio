@@ -13,10 +13,10 @@ export class Projects {
   projectsServices = inject(ProjectsServices);
   qaProjects       = computed(this.projectsServices.projectsQAList);
   devProjects      = computed(this.projectsServices.projectsDevList);
-  projectsRole = 'qa';
+  projectsRole = signal<string>('qa');
 
   ViewProjectByRole(role: string){
-    this.projectsRole = role;
+    this.projectsRole.set(role);
   }
 
 }
