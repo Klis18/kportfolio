@@ -9,7 +9,7 @@ import { Project, statusProject } from '../../interfaces/project.interface';
 })
 export class ProjectCard {
 
-  qaProject = input.required<Project>()
+  project = input.required<Project>()
 
   statusProject = statusProject;
 }

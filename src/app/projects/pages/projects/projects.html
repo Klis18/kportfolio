@@ -1,12 +1,17 @@
 <div class="px-8 md:px-12 lg:px-12 xl:px-12 py-4 md:py-8 lg:py-8 xl:py-8">
     <h1 class="text-5xl">Mis Proyectos</h1>
-    <div class="flex items-center my-4 gap-2">
-        <button class="primary-button border-2">Proyectos QA</button>
-        <button class="primary-button border-2">Proyectos Desarrollo</button>
+    <div class="flex items-center my-12 gap-2">
+        <button class="primary-button border-2" (click)="ViewProjectByRole('qa')">Proyectos QA</button>
+        <button class="primary-button border-2" (click)="ViewProjectByRole('dev')">Proyectos Desarrollo</button>
     </div>
-    <div class="grid grid-cols-2 gap-12 rounded-3xl my-12">
-        @for(qaProject of qaProjects(); track qaProject.id){
-            <project-card [qaProject]="qaProject"></project-card>
+
+        @switch (projectsRole) {
+            @case('qa'){
+                <project-section [projectsList]="qaProjects()"></project-section>
+            }
+
+            @case('dev'){
+                <project-section [projectsList]="devProjects()"></project-section>
+            }
         }
-    </div>
 </div>

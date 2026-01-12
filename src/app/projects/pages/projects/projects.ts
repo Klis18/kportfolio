@@ -1,18 +1,22 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { ProjectsServices } from '../../services/projects-services';
-import { ProjectCard } from "../../components/project-card/project-card";
+import { ProjectSection } from "../../components/project-section/project-section";
 
 @Component({
   selector: 'app-projects',
-  imports: [ProjectCard],
+  imports: [ProjectSection],
   templateUrl: './projects.html',
   styles: ``,
 })
 export class Projects {
 
   projectsServices = inject(ProjectsServices);
+  qaProjects       = computed(this.projectsServices.projectsQAList);
+  devProjects      = computed(this.projectsServices.projectsDevList);
+  projectsRole = 'qa';
 
-  qaProjects = computed(this.projectsServices.projectsQAList);
-  devProjects = signal<string>('');
+  ViewProjectByRole(role: string){
+    this.projectsRole = role;
+  }
 
 }

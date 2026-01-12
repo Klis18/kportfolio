@@ -1,27 +1,27 @@
-<div class="flex items-center col-span-2 lg:col-span-1 xl:col-span-1">
-                <div class="grid grid-cols-2">
-                    <div class="py-2">
-                        <img [src]="qaProject().projectImage" [alt]="qaProject().projectName" class="rounded-xl">
+<div class="flex items-center col-span-2 lg:col-span-1 xl:col-span-1 h-full bg-white px-8 py-4 rounded-md">
+                <div class="grid grid-cols-2 h-full">
+                    <div class="py-2 flex items-center justify-center">
+                        <img [src]="project().projectImage" [alt]="project().projectName" class="rounded-xl h-full">
                     </div>
-                    <div class="px-4">
-                        <h2 class="text-2xl pb-1"><b>{{qaProject().projectName}}</b></h2>
+                    <div class="px-4 h-full">
+                        <h2 class="text-2xl pb-1"><b>{{project().projectName}}</b></h2>
                         <div class="mb-2">
                             <div class="text-sm flex items-center gap-2">
-                                <div [class.bg-green-600]="qaProject().statusProject == statusProject.done"
-                                    [class.bg-gray-500]="qaProject().statusProject == statusProject.pending"
-                                    [class.bg-amber-500]="qaProject().statusProject == statusProject.progress"
+                                <div [class.bg-green-600]="project().statusProject == statusProject.done"
+                                    [class.bg-gray-500]="project().statusProject == statusProject.pending"
+                                    [class.bg-amber-500]="project().statusProject == statusProject.progress"
                                     class="rounded-full size-2">
                                 </div>
-                                <span [class.text-green-600]="qaProject().statusProject == statusProject.done"
-                                    [class.text-gray-500]="qaProject().statusProject == statusProject.pending"
-                                    [class.text-amber-500]="qaProject().statusProject == statusProject.progress">
-                                    {{qaProject().statusProject}}
+                                <span [class.text-green-600]="project().statusProject == statusProject.done"
+                                    [class.text-gray-500]="project().statusProject == statusProject.pending"
+                                    [class.text-amber-500]="project().statusProject == statusProject.progress">
+                                    {{project().statusProject}}
                                 </span>
                             </div>
-                            <p class="py-2">{{qaProject().projectDescription}}</p>
+                            <p class="py-2">{{project().projectDescription}}</p>
                         </div>
                         <div class="flex flex-wrap gap-1 mb-3 text-sm">
-                            @for(tool of qaProject().toolsProject; track $index){
+                            @for(tool of project().toolsProject; track $index){
                                 <span class="primary-bg px-2 py-1 rounded-lg">{{tool}}</span>
                             }
                         </div>
