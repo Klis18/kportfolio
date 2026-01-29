@@ -12,4 +12,8 @@ export class ProjectCard {
   project = input.required<Project>()
 
   statusProject = statusProject;
+
+  redirectToLink(url:string){
+    window.open(url,'_blank');
+  }
 }

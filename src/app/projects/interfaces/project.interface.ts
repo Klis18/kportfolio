@@ -6,7 +6,7 @@ export interface Project{
     statusProject: statusProject;
     toolsProject: string[];
     githubLink: string;
-    projectPageLink?: string;
+    projectPageLink: string;
 }
 
 export enum statusProject{
