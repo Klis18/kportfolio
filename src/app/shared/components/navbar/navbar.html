@@ -1,14 +1,20 @@
-<nav class="h-20 xs:px-2 sm:px-4 px-8 py-1.5 flex items-center flex-wrap">
-    <img src="/images/knlogolight.png" alt="logo" class="h-full cursor-pointer" routerLink="">
-    <div class="ml-auto">
-        <a  routerLink="about" 
-            routerLinkActive="border-b-8 primary-selected" 
-            class="mx-2 px-1 py-2.5 xs:text-sm sm:text-sm text-base hover:border-b-8 hover:text-lg primary">
+<nav class="h-auto sm:h-20 px-4 sm:px-8 py-2 flex flex-col sm:flex-row sm:items-center">
+    
+    <img src="/images/knlogolight.png" 
+         alt="logo" 
+         class="h-12 sm:h-full cursor-pointer mx-auto sm:mx-0"
+         routerLink="">
+
+    <div class="w-full sm:w-auto sm:ml-auto mt-2 sm:mt-0 flex justify-center sm:justify-end">
+        <a routerLink="about"
+           routerLinkActive="border-b-4 primary-selected"
+           class="mx-3 px-1 py-2 text-sm sm:text-base primary hover:border-b-4 transition-all duration-200">
             Sobre mí
         </a>
-        <a  routerLink="projects" 
-            routerLinkActive="border-b-8 primary-selected" 
-            class="mx-2 px-1 py-2.5 xs:text-sm sm:text-sm text-base hover:border-b-8 hover:text-lg primary">
+
+        <a routerLink="projects"
+           routerLinkActive="border-b-4 primary-selected"
+           class="mx-3 px-1 py-2 text-sm sm:text-base primary hover:border-b-4 transition-all duration-200">
             Mis Proyectos
         </a>
     </div>
